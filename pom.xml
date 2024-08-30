@@ -140,7 +140,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <payara.version>${payara.version}</payara.version>
+      <!--  <payara.version>6.2024.8</payara.version> -->
         <!-- Application properties -->
         <webapp.graphTraversalUrl>http://localhost:8080/cargo-tracker/rest/graph-traversal/shortest-path</webapp.graphTraversalUrl>
         <db.driverClass>org.h2.jdbcx.JdbcDataSource</db.driverClass>
@@ -168,7 +168,8 @@
         <dependency>
           <groupId>fish.payara.distributions</groupId>
           <artifactId>payara</artifactId>
-          <version>${payara.version}</version>
+        	<type>zip</type>  
+	<version>6.2024.8</version>
           <scope>test</scope>
         </dependency>
         <!-- Payara Managed Container Adapter -->
