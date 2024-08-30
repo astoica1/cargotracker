@@ -23,6 +23,7 @@
     <project.report.sourceEncoding>UTF-8</project.report.sourceEncoding>
     <maven.compiler.release>11</maven.compiler.release>
     <jakartaee-api.version>10.0.0</jakartaee-api.version>
+    <payara.version>4.1.2.181</payara.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -134,12 +135,12 @@
   <profiles>
     <!-- The currently supported application servers are represented as profiles -->
     <profile>
-      <id>payara</id>
+      <id>payara-server-remote</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <payara.version>6.2024.6</payara.version>
+<!--         <payara.version>6.2024.6</payara.version> -->
         <!-- Application properties -->
         <webapp.graphTraversalUrl>http://localhost:8080/cargo-tracker/rest/graph-traversal/shortest-path</webapp.graphTraversalUrl>
         <db.driverClass>org.h2.jdbcx.JdbcDataSource</db.driverClass>
@@ -166,7 +167,7 @@
         </dependency>
         <dependency>
           <groupId>fish.payara.extras</groupId>
-          <artifactId>payara-micro</artifactId>
+          <artifactId>payara-embedded-all</artifactId>
           <version>${payara.version}</version>
           <scope>test</scope>
         </dependency>
